@@ -7,6 +7,8 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+app.set("trust proxy", 1);
+
 // Import routes
 const courseRoutes = require('./routes/courseRoutes');
 const certRoutes = require('./routes/certRoutes');
@@ -45,7 +47,7 @@ app.get('/health', (req, res) => {
 });
 
 // API routes
-app.use('/courses', courseRoutes);
+app.use('/api/courses', courseRoutes);
 app.use('/api/certificates', certRoutes);
 app.use('/api/auth', authRoutes);
 
