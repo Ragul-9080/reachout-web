@@ -1,0 +1,99 @@
+1. Overall System Architecture
+We’ll have two main parts:
+•	Public Website → Shows courses, about us, contact, certificate verification page
+•	Admin Dashboard → For managing courses and certificates
+________________________________________
+2. Folder / File Structure
+reachout-academy/
+│
+├── backend/  (Node.js + Express + Database)
+│   ├── config/
+│   │   └── db.js               # Database connection
+│   ├── models/
+│   │   ├── Course.js           # Course schema
+│   │   ├── Certificate.js      # Certificate schema
+│   │   └── User.js             # Admin schema
+│   ├── routes/
+│   │   ├── courseRoutes.js     # Add/Edit/Delete Courses
+│   │   ├── certRoutes.js       # Add/Search Certificates
+│   │   └── authRoutes.js       # Admin login
+│   ├── controllers/
+│   │   ├── courseController.js
+│   │   ├── certController.js
+│   │   └── authController.js
+│   ├── server.js               # Main backend entry point
+│   └── package.json
+│
+├── frontend/ (React.js)
+│   ├── public/
+│   │   └── index.html
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Navbar.js
+│   │   │   ├── Footer.js
+│   │   │   ├── CourseCard.js
+│   │   │   └── CertificateForm.js
+│   │   ├── pages/
+│   │   │   ├── Home.js
+│   │   │   ├── Courses.js
+│   │   │   ├── About.js
+│   │   │   ├── Contact.js
+│   │   │   ├── VerifyCertificate.js
+│   │   │   └── AdminDashboard.js
+│   │   ├── admin/
+│   │   │   ├── ManageCourses.js
+│   │   │   ├── ManageCertificates.js
+│   │   │   └── Login.js
+│   │   ├── App.js
+│   │   └── index.js
+│   └── package.json
+│
+└── README.md
+________________________________________
+3. Pages & Features
+Public Website
+•	Home – Overview of Reachout Academy
+•	Courses – List of all courses (dynamic from DB)
+•	Verify Certificate – Enter certificate number → Show student details
+•	About Us – Mission, team
+•	Contact Us – Form + location
+Admin Dashboard
+•	Login – Secure authentication
+•	Manage Courses
+o	Add new course (title, description, image, fees, duration)
+o	Edit course
+o	Delete course
+•	Manage Certificates
+o	Add certificate details (student name, course, issue date, cert number)
+o	Delete certificate
+•	View All Certificates
+•	Logout
+________________________________________
+4. Database Design
+Courses Table
+Field	Type	Description
+id	String	Unique ID
+title	String	Course Name
+description	String	Details
+duration	String	Duration (e.g., 3 months)
+fees	Number	Course Fee
+image	String	Course Image URL
+Certificates Table
+Field	Type	Description
+id	String	Unique ID
+studentName	String	Student's Name
+courseName	String	Course Completed
+issueDate	Date	Date of Issue
+certNumber	String	Unique Certificate Number
+status	String	Valid / Expired
+Admin Users Table
+Field	Type	Description
+id	String	Unique ID
+email	String	Admin Email
+password	String	Hashed Password
+________________________________________
+5. Flow Diagram
+Admin Login → Dashboard → Add/Edit/Delete Courses → Public Sees Updates
+          ↓
+      Add Certificate → Public Verifies via Certificate Number → Shows Student Details
+
