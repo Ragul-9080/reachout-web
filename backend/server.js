@@ -45,7 +45,7 @@ app.get('/health', (req, res) => {
 });
 
 // API routes
-app.use('/api/courses', courseRoutes);
+app.use('/courses', courseRoutes);
 app.use('/api/certificates', certRoutes);
 app.use('/api/auth', authRoutes);
 
