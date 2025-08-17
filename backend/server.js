@@ -28,7 +28,23 @@ app.use('/api/', limiter);
 // CORS configuration
 const cors = require("cors");
 
-app.use(cors());  // ✅ this works
+const allowedOrigins = [
+  "http://localhost:3000",
+  "https://reachout-web.vercel.app",
+  "https://reachout-web.vercel.app/"
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true
+}));
+
 
 
 // Body parsing middleware
