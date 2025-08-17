@@ -26,12 +26,10 @@ const limiter = rateLimit({
 app.use('/api/', limiter);
 
 // CORS configuration
-app.use(cors({
-  origin: process.env.NODE_ENV === 'production' 
-    ? ['https://reachout-web.vercel.app'] 
-    : ['http://localhost:3000'],
-  credentials: true
-}));
+const cors = require("cors");
+
+app.use(cors());  // ✅ this works
+
 
 // Body parsing middleware
 app.use(express.json({ limit: '10mb' }));
