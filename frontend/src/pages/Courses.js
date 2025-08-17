@@ -90,7 +90,7 @@ const Courses = () => {
                   </p>
                   <div className="flex justify-between items-center mb-4">
                     <span className="text-blue-600 font-semibold text-lg">
-                      ${course.fees}
+                      ₹{course.fees}
                     </span>
                     <span className="text-gray-500 text-sm bg-gray-100 px-2 py-1 rounded">
                       {course.duration}
