@@ -45,9 +45,11 @@ const AdminLogin = () => {
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <div className="flex justify-center">
-          <div className="h-12 w-12 bg-blue-600 rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-lg">RA</span>
-          </div>
+          <img 
+            src="/logo/logo-transparent-png.png" 
+            alt="Reachout Academy Logo" 
+            className="h-15 w-16 rounded-lg object-contain bg-white"
+          />
         </div>
         <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
           Admin Login
@@ -143,22 +145,10 @@ const AdminLogin = () => {
               <div className="absolute inset-0 flex items-center">
                 <div className="w-full border-t border-gray-300" />
               </div>
-              <div className="relative flex justify-center text-sm">
-                <span className="px-2 bg-white text-gray-500">Demo Credentials</span>
-              </div>
+              
             </div>
 
-            <div className="mt-6 bg-gray-50 rounded-lg p-4">
-              <p className="text-xs text-gray-600 mb-2">
-                <strong>Email:</strong> admin@reachoutacademy.com
-              </p>
-              <p className="text-xs text-gray-600">
-                <strong>Password:</strong> admin123
-              </p>
-              <p className="text-xs text-gray-500 mt-2">
-                Note: These are demo credentials. Change them in production.
-              </p>
-            </div>
+           
 
             <div className="mt-4 text-center">
               <p className="text-sm text-gray-600 mb-2">

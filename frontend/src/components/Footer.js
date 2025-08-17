@@ -9,9 +9,11 @@ const Footer = () => {
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center mb-4">
-              <div className="h-8 w-8 bg-blue-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">RA</span>
-              </div>
+              <img 
+                src="/logo/logo-transparent-png.png" 
+                alt="Reachout Academy Logo" 
+                className="h-8 w-8 rounded-lg object-contain bg-white"
+              />
               <span className="ml-2 text-xl font-bold">Reachout Academy</span>
             </div>
             <p className="text-gray-300 mb-4 max-w-md">
