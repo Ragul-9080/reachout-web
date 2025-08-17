@@ -28,7 +28,7 @@ app.use('/api/', limiter);
 // CORS configuration
 const cors = require("cors");
 app.use(cors({
-  origin: process.env.NODE_ENV === 'development' 
+  origin: process.env.NODE_ENV === 'production' 
     ? ['https://reachout-web.vercel.app'] 
     : ['http://localhost:3000'],
   credentials: true
