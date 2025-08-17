@@ -149,7 +149,7 @@ const Home = () => {
                     </p>
                     <div className="flex justify-between items-center mb-4">
                       <span className="text-blue-600 font-semibold">
-                        ${course.fees}
+                         ₹{course.fees}
                       </span>
                       <span className="text-gray-500 text-sm">
                         {course.duration}
