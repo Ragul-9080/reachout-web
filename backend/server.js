@@ -26,7 +26,7 @@ const limiter = rateLimit({
 app.use('/api/', limiter);
 
 // CORS configuration
-const cors = require("cors");
+
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
     ? ['https://reachout-web.vercel.app'] 
